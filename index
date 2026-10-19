@@ -1,23 +1,102 @@
-<!-- 棉花娃娃區 -->
-<div class="gallery-item" data-category="dolls">
-  <div class="photo-card">
-    <img src="images/doll_01.jpg" alt="草莓小熊">
-    <div class="photo-tag">草莓小熊 🍓</div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ 我的夢幻小酒館 ✨</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts 可愛字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<!-- 紙片周邊區 -->
-<div class="gallery-item hidden" data-category="cards">
-  <div class="photo-card">
-    <img src="images/card_01.jpg" alt="限定拍立得">
-    <div class="photo-tag">限定拍立得 📸</div>
-  </div>
-</div>
+  <!-- 手機外殼容器 -->
+  <main class="mobile-container">
+    
+    <!-- 個人頂部標題區域 -->
+    <header class="profile-header">
+      <div class="avatar-box">🌸</div>
+      <h1>甜甜收藏館</h1>
+      <p>歡迎來到我的萌物與收藏小天地 🐾</p>
+    </header>
 
-<!-- 藏書閣區 -->
-<div class="gallery-item hidden" data-category="books">
-  <div class="photo-card">
-    <img src="images/book_01.jpg" alt="精裝畫集">
-    <div class="photo-tag">精裝畫集 🎨</div>
+    <!-- 三大互動按鈕列 -->
+    <nav class="category-nav">
+      <button class="nav-btn active" data-category="dolls">
+        <span class="btn-icon">🧸</span>
+        <span class="btn-text">棉花娃娃</span>
+      </button>
+      <button class="nav-btn" data-category="cards">
+        <span class="btn-icon">✨</span>
+        <span class="btn-text">紙片周邊</span>
+      </button>
+      <button class="nav-btn" data-category="books">
+        <span class="btn-icon">📚</span>
+        <span class="btn-text">藏書閣</span>
+      </button>
+    </nav>
+
+    <!-- 照片展示牆區域 -->
+    <section class="gallery-container">
+
+      <!-- ================= 棉花娃娃 照片區 ================= -->
+      <!-- 替換說明：將 src="https://..." 改為你的照片路徑，如 src="images/doll1.jpg" -->
+      <div class="gallery-item" data-category="dolls">
+        <div class="photo-card">
+          <img src="https://picsum.photos/400/400?random=1" alt="棉花娃娃照片 1">
+          <div class="photo-tag">草莓小熊 🍓</div>
+        </div>
+      </div>
+      <div class="gallery-item" data-category="dolls">
+        <div class="photo-card">
+          <img src="https://picsum.photos/400/400?random=2" alt="棉花娃娃照片 2">
+          <div class="photo-tag">軟綿綿兔兔 🐰</div>
+        </div>
+      </div>
+
+      <!-- ================= 紙片周邊 照片區 ================= -->
+      <div class="gallery-item hidden" data-category="cards">
+        <div class="photo-card">
+          <img src="https://picsum.photos/400/400?random=3" alt="紙片照片 1">
+          <div class="photo-tag">限定拍立得 📸</div>
+        </div>
+      </div>
+      <div class="gallery-item hidden" data-category="cards">
+        <div class="photo-card">
+          <img src="https://picsum.photos/400/400?random=4" alt="紙片照片 2">
+          <div class="photo-tag">閃亮小卡 ✨</div>
+        </div>
+      </div>
+
+      <!-- ================= 藏書閣 照片區 ================= -->
+      <div class="gallery-item hidden" data-category="books">
+        <div class="photo-card">
+          <img src="https://picsum.photos/400/400?random=5" alt="書本照片 1">
+          <div class="photo-tag">精裝畫集 🎨</div>
+        </div>
+      </div>
+      <div class="gallery-item hidden" data-category="books">
+        <div class="photo-card">
+          <img src="https://picsum.photos/400/400?random=6" alt="書本照片 2">
+          <div class="photo-tag">心靈漫畫 📖</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 頁尾可愛資訊 -->
+    <footer class="sweet-footer">
+      <p>ღ Designed with Love ღ</p>
+    </footer>
+
+  </main>
+
+  <!-- 點擊放大查看的照片燈箱 (Modal) -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="放大照片">
   </div>
-</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
