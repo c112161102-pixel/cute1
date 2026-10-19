@@ -1,0 +1,23 @@
+<!-- 棉花娃娃區 -->
+<div class="gallery-item" data-category="dolls">
+  <div class="photo-card">
+    <img src="images/doll_01.jpg" alt="草莓小熊">
+    <div class="photo-tag">草莓小熊 🍓</div>
+  </div>
+</div>
+
+<!-- 紙片周邊區 -->
+<div class="gallery-item hidden" data-category="cards">
+  <div class="photo-card">
+    <img src="images/card_01.jpg" alt="限定拍立得">
+    <div class="photo-tag">限定拍立得 📸</div>
+  </div>
+</div>
+
+<!-- 藏書閣區 -->
+<div class="gallery-item hidden" data-category="books">
+  <div class="photo-card">
+    <img src="images/book_01.jpg" alt="精裝畫集">
+    <div class="photo-tag">精裝畫集 🎨</div>
+  </div>
+</div>
