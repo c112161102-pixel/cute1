@@ -1,0 +1,227 @@
+/* ===== 全局與變數設定 ===== */
+:root {
+  --bg-gradient: linear-gradient(135deg, #fff0f5 0%, #e6f2ff 100%);
+  --card-bg: #ffffff;
+  --text-primary: #5c4b51;
+  --text-secondary: #8d7b82;
+  --pink-pastel: #ffb7b2;
+  --green-pastel: #b5ead7;
+  --yellow-pastel: #e2f0cb;
+  --purple-pastel: #c7ceea;
+  --shadow-soft: 0 10px 25px rgba(220, 180, 200, 0.25);
+  --radius-large: 24px;
+  --radius-medium: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Zen Maru Gothic', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--text-primary);
+  padding: 12px;
+}
+
+/* ===== 手機尺寸容器 ===== */
+.mobile-container {
+  width: 100%;
+  max-width: 430px; /* 標準手機螢幕寬度 */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  padding: 20px 16px;
+  box-shadow: var(--shadow-soft);
+  border: 4px solid #ffffff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===== 標題個人區 ===== */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar-box {
+  width: 70px;
+  height: 70px;
+  background-color: #ffe5ec;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 10px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+}
+
+.profile-header h1 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+.profile-header p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ===== 分類按鈕區 ===== */
+.category-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 6px;
+  border: none;
+  border-radius: var(--radius-medium);
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.nav-btn .btn-icon {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.nav-btn .btn-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* 按鈕選中樣式（馬卡龍粉黃綠） */
+.nav-btn[data-category="dolls"].active {
+  background-color: var(--pink-pastel);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(255, 183, 178, 0.4);
+}
+
+.nav-btn[data-category="cards"].active {
+  background-color: var(--green-pastel);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(181, 234, 215, 0.5);
+}
+
+.nav-btn[data-category="books"].active {
+  background-color: var(--yellow-pastel);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(226, 240, 203, 0.6);
+}
+
+.nav-btn.active .btn-text {
+  color: var(--text-primary);
+}
+
+/* ===== 照片展示網格 ===== */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  min-height: 300px;
+}
+
+.gallery-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-item.hidden {
+  display: none;
+}
+
+.photo-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  padding: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+  border: 2px solid #fff3f5;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.photo-card:active {
+  transform: scale(0.96);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.photo-tag {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 8px;
+  color: var(--text-primary);
+  padding: 2px 0;
+}
+
+/* ===== 頁尾 ===== */
+.sweet-footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* ===== 放大相片燈箱 (Lightbox) ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(92, 75, 81, 0.85);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 85%;
+  max-height: 80vh;
+  border-radius: 20px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #ffffff;
+  font-size: 35px;
+  cursor: pointer;
+}
